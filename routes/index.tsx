@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
 import {
@@ -208,9 +208,9 @@ function Landing() {
             <span>© {new Date().getFullYear()} motus-research</span>
           </div>
           <div className="flex gap-6">
-            <a href="/privacy" className="hover:text-white">Privacy</a>
-            <a href="/terms" className="hover:text-white">Terms</a>
-            <a href="#" className="hover:text-white">Discord</a>
+            <Link to="/privacy" className="hover:text-white">Privacy</Link>
+            <Link to="/terms" className="hover:text-white">Terms</Link>
+            <a href="https://discord.gg/TsmmZ5XYYb" className="hover:text-white">Discord</a>
           </div>
         </div>
       </footer>

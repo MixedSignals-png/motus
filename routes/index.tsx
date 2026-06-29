@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-const APP_URL = "https://app.motus-research.xyz";
+const APP_URL = "https://chat.motus-research.xyz";
 
 type Bot = {
   name: string;
@@ -208,8 +208,8 @@ function Landing() {
             <span>© {new Date().getFullYear()} motus-research</span>
           </div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white">Privacy</a>
-            <a href="#" className="hover:text-white">Terms</a>
+            <a href="/privacy" className="hover:text-white">Privacy</a>
+            <a href="/terms" className="hover:text-white">Terms</a>
             <a href="#" className="hover:text-white">Discord</a>
           </div>
         </div>
@@ -233,7 +233,7 @@ function Logo({ small = false }: { small?: boolean }) {
 
 function BotImport() {
   const [val, setVal] = useState("");
-  const href = val.trim() ? `${APP_URL}/import?bot=${encodeURIComponent(val.trim())}` : APP_URL;
+  const href = APP_URL;
   return (
     <form
       action={APP_URL}
@@ -285,7 +285,7 @@ function BrowsePane() {
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
         {BOTS.map((b, i) => (
           <a
-            href={`${APP_URL}/bot/${encodeURIComponent(b.name)}`}
+            href={APP_URL}
             key={b.name}
             style={{ animationDelay: `${i * 60}ms` }}
             className="group relative aspect-[3/4] cursor-pointer overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 card-lift circuit-border animate-rise"
@@ -327,7 +327,7 @@ function MyBotsPane() {
         <p className="text-sm text-zinc-500">Your imported and custom characters.</p>
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        <a href={`${APP_URL}/create`} className="flex aspect-[3/2] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-neutral-800 bg-neutral-950/40 text-zinc-400 transition card-lift circuit-border hover:text-white">
+        <a href={APP_URL} className="flex aspect-[3/2] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-neutral-800 bg-neutral-950/40 text-zinc-400 transition card-lift circuit-border hover:text-white">
           <div className="grid h-10 w-10 place-items-center rounded-full border border-neutral-800 bg-black">
             <Sparkles className="h-4 w-4" />
           </div>
@@ -336,7 +336,7 @@ function MyBotsPane() {
         </a>
         {BOTS.slice(0, 5).map((b) => (
           <a
-            href={`${APP_URL}/bot/${encodeURIComponent(b.name)}`}
+            href={APP_URL}
             key={b.name}
             className="group flex items-center gap-3 rounded-2xl border border-neutral-800 bg-neutral-950 p-3 card-lift circuit-border"
           >
@@ -365,7 +365,7 @@ function MyChatsPane() {
       <div className="divide-y divide-neutral-900 overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950/50">
         {CHATS.map((c) => (
           <a
-            href={`${APP_URL}/chat/${encodeURIComponent(c.name)}`}
+            href={APP_URL}
             key={c.name}
             className="group grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 px-3 py-3 transition duration-300 hover:bg-[oklch(0.65_0.25_295/0.06)] hover:pl-5 md:px-5 md:py-4"
           >
